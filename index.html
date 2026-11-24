@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sınav Yoklama Kontrolü — Koyu Tema</title>
+<title>Sınav Yoklama Kontrolü — v2.2</title>
 <style>
 :root{color-scheme:light;--bg:#f5f7fa;--surface:#fff;--ink:#1b293e;--muted:#65748a;--line:#e1e6ef;--blue:#2856b7;--blueLight:#eaf0fc;--red:#ad4044;--redLight:#fceff0;--green:#167753;--greenLight:#e8f7f0}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.48;cursor:not-allowed}.wrap{max-width:1480px;margin:0 auto;padding:22px 26px}.hero{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}h1{font-size:24px;letter-spacing:-.035em;line-height:1.15;margin:3px 0 5px}h2{font-size:15px;line-height:1.25;margin:0}.sub{color:var(--muted);font-size:12px;margin:0}.pill{white-space:nowrap;padding:5px 9px;border-radius:20px;background:#f0f3f8;color:#51637d;font-size:11px;font-weight:650}.hero>.pill{background:#e9f4ec;color:#26704f}.layout{display:grid;grid-template-columns:minmax(270px,350px) minmax(0,1fr);gap:16px;align-items:stretch}.leftcol{display:flex;flex-direction:column;gap:14px}.panel{border:1px solid var(--line);border-radius:13px;background:var(--surface);padding:17px}.headrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.helper{color:var(--muted);font-size:12px;margin:8px 0 12px}.drop{border:1.5px dashed #b9c7de;border-radius:9px;background:#fafcff;text-align:center;padding:16px 10px;transition:.2s}.drop.drag{background:var(--blueLight);border-color:var(--blue)}.drop strong{display:block;font-size:13px;margin-bottom:4px}.drop span{display:block;color:var(--muted);font-size:11px;margin:5px 0 10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:8px 11px;font-weight:650;font-size:12px;text-decoration:none;white-space:nowrap}.btn:hover{background:#f1f5fa}.btn-primary{background:var(--blue);border-color:var(--blue);color:white}.btn-primary:hover{background:#204996}.btn-danger{color:var(--red);border-color:#ebd7d7}.actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.status{background:#f5f7fa;border-radius:7px;color:var(--muted);font-size:11.5px;line-height:1.4;margin-top:10px;padding:9px 10px}.status.good{background:var(--greenLight);color:var(--green)}.status.bad{background:var(--redLight);color:var(--red)}.status.warn{background:#fff6e7;color:#865f17}.map{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}.map span{font-size:11px;color:#53647d;background:#f2f5f9;border-radius:5px;padding:4px 8px}.results{display:flex;flex-direction:column;min-height:0}.resultsHead{align-items:flex-start}.resultsHead .actions{justify-content:flex-end}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:15px 0}.stat{border:1px solid var(--line);background:#fff;border-radius:9px;padding:10px 11px;min-width:0}.stat .num{font-size:26px;font-weight:800;line-height:1.18;font-variant-numeric:tabular-nums}.stat .label{font-size:10.5px;color:var(--muted);margin-top:3px}.stat.present .num{color:var(--green)}.stat.abs .num{color:var(--red)}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 11px}.tabs{display:flex;gap:3px;background:#f0f3f8;border-radius:8px;padding:3px;flex-wrap:wrap}.tab{border:0;background:transparent;color:#53657e;border-radius:6px;padding:7px 9px;font-weight:650;font-size:11.5px}.tab.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px #d5dde9}.toolbar select,.toolbar input{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:8px;font-size:12px;height:34px;min-width:0}.toolbar input{flex:1;min-width:130px}.scroll{border:1px solid var(--line);border-radius:9px;overflow:auto;min-height:180px;max-height:calc(100vh - 340px);flex:1}table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:9px 12px;border-bottom:1px solid #eef1f5}th{font-size:11px;font-weight:750;background:#f7f9fc;color:#62728a;position:sticky;top:0;white-space:nowrap}td{font-size:12px}tr:last-child td{border-bottom:0}.student{font-weight:700}.tag{display:inline-block;border-radius:6px;padding:3px 7px;font-weight:700;font-size:10.5px;white-space:nowrap}.tag.present{color:var(--green);background:var(--greenLight)}.tag.absent{color:var(--red);background:var(--redLight)}.empty{text-align:center;padding:35px 9px;color:var(--muted)}.notice{color:var(--muted);font-size:11px;margin-top:9px}.footer{font-size:10.5px;color:var(--muted);margin:13px 0 0;text-align:center}.hidden{display:none!important}dialog{border:1px solid var(--line);box-shadow:0 15px 60px #1b293e44;border-radius:13px;padding:22px;width:min(580px,94vw)}dialog::backdrop{background:#14243e80}textarea{width:100%;min-height:210px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:12px}code{background:#eff2f6;padding:2px 4px;border-radius:4px}.divider{border:0;border-top:1px solid var(--line);margin:14px 0}
@@ -29,30 +29,157 @@ dialog{background:#16253a;color:var(--ink);border-color:#46607d;box-shadow:0 20p
 .step-panel.is-active:before{content:"";pointer-events:none;position:absolute;inset:-2px;border-radius:15px;border:1px solid #85c9ff;opacity:.55}
 .step-panel.is-complete:not(.is-active){border-color:#355649}
 .step-panel .headrow h2{display:flex;align-items:center;gap:7px}
-.step-panel.is-active .headrow h2:after{content:"Sıradaki adım";font-size:10px;font-weight:700;letter-spacing:0;color:#b9ddff;background:#1a3b61;border:1px solid #4477a9;border-radius:40px;padding:3px 7px}
+.step-panel.is-active .headrow h2:after{content:"Sıradaki adım";display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;white-space:nowrap;line-height:1;min-height:24px;font-size:10px;font-weight:750;letter-spacing:0;color:#d4eaff;background:linear-gradient(135deg,#1c4775,#1a3657);border:1px solid #548cc3;border-radius:999px;padding:5px 10px;box-shadow:0 0 10px #3b88e329}
 .step-panel.is-active#resultsPanel .headrow h2:after{content:"Sonuçlar hazır"}
 .step-panel.is-complete:not(.is-active) .headrow h2:after{content:"✓";color:#6be0b4;font-weight:900}
 @keyframes stepGlow{0%,100%{box-shadow:0 0 0 1px #448be743,0 0 18px #347af83c,0 12px 34px #01050b40}50%{box-shadow:0 0 0 2px #6cb7ff99,0 0 33px #438cff8c,0 14px 40px #01050b55}}
 @media(prefers-reduced-motion:reduce){.step-panel.is-active{animation:none;box-shadow:0 0 0 2px #70baff,0 0 22px #3987fb80}}
 .footer-credit{font-size:12px;font-weight:650;color:var(--ink);margin-bottom:3px}
+
+/* v1.8: tek ekran masaustu yerlesimi; uzun listeler kendi panellerinde kayar. */
+@media (min-width:741px){
+  html,body{height:100%;min-height:0}
+  body{overflow:hidden}
+  .wrap{height:100vh;height:100dvh;min-height:0;max-width:1600px;display:flex;flex-direction:column;padding:12px 18px 9px;overflow:hidden}
+  .hero{flex:0 0 auto;margin-bottom:10px;gap:10px}
+  h1{font-size:clamp(19px,2vw,23px);margin:2px 0 3px}
+  .hero .sub{font-size:11px}
+  .layout{flex:1 1 auto;min-height:0;min-width:0;grid-template-columns:minmax(260px,320px) minmax(0,1fr);gap:12px;align-items:stretch;height:auto}
+  .leftcol{min-height:0;overflow-y:auto;overflow-x:hidden;gap:10px;padding:2px 3px 3px 2px;scrollbar-width:thin}
+  .panel{padding:12px;border-radius:11px}
+  .leftcol .panel{flex:0 0 auto}
+  .helper{margin:5px 0 7px;font-size:11px;line-height:1.3}
+  .drop{padding:9px 8px}
+  .drop strong{font-size:12px;margin-bottom:1px}
+  .drop span{margin:3px 0 7px;font-size:10.5px}
+  .btn{padding:6px 9px;font-size:11px}
+  .status{padding:6px 8px;margin-top:7px;font-size:10.5px}
+  .map{margin-top:7px;gap:4px}
+  .map span{padding:3px 6px;font-size:10px}
+  .leftcol .actions{margin-top:7px!important}
+  .results{min-height:0;overflow:hidden;display:flex;flex-direction:column}
+  .resultsHead{flex:0 0 auto;gap:9px}
+  .stats{flex:0 0 auto;margin:10px 0;gap:6px}
+  .stat{padding:7px 8px}
+  .stat .num{font-size:clamp(20px,2vw,25px)}
+  .stat .label{font-size:10px}
+  .toolbar{flex:0 0 auto;gap:6px;margin:0 0 8px}
+  .tab{padding:6px 8px;font-size:11px}
+  .toolbar select,.toolbar input{height:31px;padding:5px 7px;font-size:11px}
+  .scroll,.results .scroll{flex:1 1 auto;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain}
+  th,td{padding:7px 10px}
+  .notice{flex:0 0 auto;margin-top:6px;font-size:10px;line-height:1.25}
+  .footer{flex:0 0 auto;margin:7px 0 0;font-size:9px;line-height:1.3}
+  .footer-credit{font-size:11px;margin-bottom:1px}
+}
+@media (min-width:741px) and (max-width:1050px){
+  .layout{grid-template-columns:minmax(245px,285px) minmax(0,1fr)}
+  .tabs{flex-wrap:wrap}
+  .stats{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media (min-width:741px) and (max-height:680px){
+  .wrap{padding-top:7px;padding-bottom:5px}
+  .hero{margin-bottom:6px}
+  .eyebrow,.hero .sub{display:none}
+  .leftcol{gap:7px}
+  .panel{padding:9px}
+  .drop{padding:6px}
+  .helper{margin:4px 0 5px}
+  .stats{margin:7px 0}
+  .stat{padding:5px 7px}
+  .stat .num{font-size:20px}
+  .footer{margin-top:4px}
+}
+@media (max-width:740px){
+  body{overflow:auto}
+  .wrap{height:auto;min-height:100dvh;overflow:visible}
+  .scroll,.results .scroll{max-height:min(46vh,420px);min-height:170px}
+}
+
+/* v2.1: compact, live workflow status panel occupies unused left-column space. */
+.usage-panel{display:flex;flex-direction:column;gap:12px;min-height:200px;flex:1 1 auto}
+.usage-title{display:flex;align-items:center;gap:9px;font-weight:750;font-size:13px}
+.usage-title svg{width:17px;height:17px;stroke:#88b9ff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.usage-badge{margin-left:auto;white-space:nowrap;font-size:10px;border-radius:999px;padding:4px 9px;background:#26394f;color:#b6c9e3;font-weight:700}
+.usage-badge.done{background:#173b32;color:#7fe2b7}
+.usage-list{display:flex;flex-direction:column;justify-content:space-evenly;flex:1;gap:12px}
+.usage-row{display:flex;gap:10px;align-items:center;min-width:0}
+.usage-dot{height:25px;width:25px;display:grid;place-items:center;flex:0 0 25px;border-radius:50%;border:1px solid #52617a;color:#a6b7cc;font-weight:800;font-size:13px;background:#1b2b41}
+.usage-row.done .usage-dot{border-color:#33745d;color:#75dfb2;background:#193b32}
+.usage-row.current .usage-dot{border-color:#5697ed;color:#b9d9ff;background:#21446b;box-shadow:0 0 12px #326fe644}
+.usage-copy{min-width:0;flex:1}.usage-label{font-size:12px;color:#e8f0ff;font-weight:650}.usage-detail{font-size:10.5px;color:#9eafc8;margin-top:2px;line-height:1.35;overflow-wrap:anywhere}
+.usage-mark{font-size:14px;color:#788da8}.usage-row.done .usage-mark{color:#75dfb2}.usage-row.current .usage-mark{color:#90bcff}
+.usage-sep{height:1px;background:#2b3e56;margin-left:35px}
+@media(min-width:741px){.leftcol .usage-panel{flex:1 0 170px;min-height:170px}.usage-list{gap:6px}.usage-panel{gap:7px}}
+@media(max-width:740px){.usage-panel{min-height:185px}.leftcol .usage-panel{grid-column:1/-1}}
+
+/* v2.2: no left-column scrollbar on desktop, including compact laptop screens. */
+@media (min-width:741px){
+ .leftcol{overflow:hidden;display:grid;grid-template-rows:max-content max-content minmax(0,1fr);gap:8px;padding:2px 3px 2px 2px;align-content:stretch}
+ .leftcol .panel{min-width:0;padding:10px;flex:none}
+ .leftcol h2{font-size:14px}
+ .leftcol .helper{margin:4px 0 6px;font-size:10.5px;line-height:1.22}
+ .leftcol .drop{padding:7px 6px}
+ .leftcol .drop span{margin:2px 0 6px;font-size:10px}
+ .leftcol .drop strong{font-size:11.5px}
+ .leftcol .btn{padding:5px 8px;font-size:10.5px}
+ .leftcol .status{margin-top:6px;padding:5px 8px;font-size:10px;line-height:1.28}
+ .leftcol .actions{gap:5px;margin-top:5px!important}
+ .leftcol .usage-panel{min-height:0;overflow:hidden;gap:4px;justify-content:space-between}
+ .usage-panel .usage-list{gap:3px;justify-content:space-evenly;min-height:0}
+ .usage-panel .usage-dot{width:20px;height:20px;flex-basis:20px;font-size:11px}
+ .usage-panel .usage-title{font-size:12px}
+ .usage-panel .usage-row{gap:7px}
+ .usage-panel .usage-label{font-size:11px}
+ .usage-panel .usage-detail{font-size:10px;line-height:1.15;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .usage-panel .usage-sep{margin-left:27px}
+}
+@media (min-width:741px) and (max-width:1100px){
+ .leftcol .helper{font-size:10px}
+ .leftcol .drop span{display:none}
+ .leftcol .drop{padding:6px 5px}
+ .leftcol .headrow{gap:5px}
+ .leftcol .headrow .pill{font-size:10px;padding:4px 6px}
+ .leftcol .actions .btn{padding:5px 6px;font-size:10px}
+}
+@media (min-width:741px) and (max-height:720px){
+ .leftcol{gap:6px}
+ .leftcol .panel{padding:7px 9px}
+ .leftcol .helper{margin:3px 0 4px}
+ .leftcol .status{margin-top:4px;padding:4px 7px}
+ .leftcol .actions{margin-top:4px!important}
+ .leftcol .drop{padding:5px}
+ .leftcol .usage-panel{gap:2px}
+ .usage-panel .usage-list{gap:1px}
+}
 </style></head><body>
 <div class="wrap">
-<header class="hero"><div><div class="eyebrow">Öğrenci değerlendirme</div><h1>Sınav Yoklama Kontrolü</h1><p class="sub">Sınava katılımı, cevap işaretlemeyenleri ve sınav dosyasında bulunmayanları tek ekranda inceleyin.</p></div><span class="pill">● Çevrimdışı · Yerel kayıt · v1.7</span></header>
+<header class="hero"><div><div class="eyebrow">Öğrenci değerlendirme</div><h1>Sınav Yoklama Kontrolü</h1><p class="sub">Sınava katılımı, cevap işaretlemeyenleri ve sınav dosyasında bulunmayanları tek ekranda inceleyin.</p></div><span class="pill">● Çevrimdışı · Yerel kayıt · v2.2</span></header>
 <main class="layout">
 <div class="leftcol">
 <section class="panel step-panel" id="rosterPanel"><div class="headrow"><h2>1. Kayıtlı sınıf listesi</h2><span class="pill" id="savedCount">Liste yok</span></div><p class="helper">Excel listenizi bir kez yükleyin. Değiştirene veya silene kadar bu tarayıcıda saklanır.</p><div class="drop" id="rosterDrop"><strong>Sınıf listesini yükleyin</strong><span>Excel (.xlsx), CSV, TXT · sütunlar: sınıf, No, ad ve soyad</span><button class="btn btn-primary" id="rosterBtn">Dosya seç</button><input class="hidden" type="file" id="rosterFile" accept=".xlsx,.csv,.txt,.tsv,text/plain,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></div><div id="rosterStatus" class="status" role="status">Henüz kayıtlı sınıf listesi yok.</div><div class="actions" style="margin-top:10px"><button class="btn" id="pasteBtn">Listeyi düzenle</button><button class="btn" id="downloadTemplate">Örnek indir</button><button class="btn btn-danger" id="deleteRoster" disabled>Listeyi sil</button></div></section>
-<section class="panel step-panel" id="examPanel"><div class="headrow"><h2>2. Sınav dosyası</h2><span class="pill" id="examCount">Yüklenmedi</span></div><p class="helper">DAT veya TXT dosyasını yükleyin. Kimlikten sonra A/B/C/D olmayan satırlar ayrı listelenir.</p><div class="drop" id="examDrop"><strong>Sınav verisini yükleyin</strong><span>.dat veya .txt · Örnek: 80100654 → 8A / 654</span><button class="btn btn-primary" id="examBtn">Dosya seç</button><input class="hidden" type="file" id="examFile" accept=".dat,.txt,text/plain,application/octet-stream"></div><div id="examStatus" class="status" role="status">Henüz sınav dosyası yüklenmedi.</div><div class="map"><span>801 → 8A</span><span>802 → 8B</span><span>803 → 8C</span><span>804 → 8D</span></div></section>
+<section class="panel step-panel" id="examPanel"><div class="headrow"><h2>2. Sınav dosyası</h2><span class="pill" id="examCount">Yüklenmedi</span></div><p class="helper">DAT veya TXT dosyasını yükleyin. Kimlikten sonra A/B/C/D olmayan satırlar ayrı listelenir.</p><div class="drop" id="examDrop"><strong>Sınav verisini yükleyin</strong><span>.dat veya .txt · Örnek: 80100654 → 8A / 654</span><button class="btn btn-primary" id="examBtn">Dosya seç</button><input class="hidden" type="file" id="examFile" accept=".dat,.txt,text/plain,application/octet-stream"></div><div id="examStatus" class="status" role="status">Henüz sınav dosyası yüklenmedi.</div></section>
+<section class="panel usage-panel" id="usagePanel" aria-labelledby="usageHeading">
+ <div class="usage-title" id="usageHeading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg> Kullanım Durumu <span class="usage-badge" id="usageBadge">Hazırlanıyor</span></div>
+ <div class="usage-list" aria-live="polite" aria-atomic="true">
+  <div class="usage-row current" id="usageRoster"><span class="usage-dot" aria-hidden="true">1</span><div class="usage-copy"><div class="usage-label">Sınıf listesi</div><div class="usage-detail" id="usageRosterDetail">Henüz yüklenmedi</div></div><span class="usage-mark" aria-hidden="true">—</span></div>
+  <div class="usage-sep"></div>
+  <div class="usage-row" id="usageExam"><span class="usage-dot" aria-hidden="true">2</span><div class="usage-copy"><div class="usage-label">Sınav dosyası</div><div class="usage-detail" id="usageExamDetail">Henüz yüklenmedi</div></div><span class="usage-mark" aria-hidden="true">—</span></div>
+  <div class="usage-sep"></div>
+  <div class="usage-row" id="usageAnalysis"><span class="usage-dot" aria-hidden="true">3</span><div class="usage-copy"><div class="usage-label">Yoklama analizi</div><div class="usage-detail" id="usageAnalysisDetail">Dosyalar bekleniyor</div></div><span class="usage-mark" aria-hidden="true">—</span></div>
+ </div>
+</section>
 </div>
 <section class="panel results step-panel" id="resultsPanel"><div class="headrow resultsHead"><div><h2>3. Yoklama sonuçları</h2><p class="helper" style="margin-bottom:0">İki devamsızlık durumu birbirinden ayrı gösterilir.</p></div><div class="actions"><button class="btn btn-primary" id="exportCategoryBtn" disabled>Seçili listeyi CSV indir</button><button class="btn" id="exportBtn" disabled>Tüm sonuçları indir</button></div></div>
-<div class="stats"><div class="stat"><div class="num" id="totalStat">0</div><div class="label">Toplam öğrenci</div></div><div class="stat abs"><div class="num" id="absentStat">—</div><div class="label">Cevap işaretlemeyen</div></div><div class="stat abs"><div class="num" id="missingStat">—</div><div class="label">Dosyada bulunmayan</div></div><div class="stat present"><div class="num" id="presentStat">—</div><div class="label">Cevaplayan</div></div><div class="stat"><div class="num" id="unknownStat">—</div><div class="label">Eşleşmeyen kayıt</div></div></div>
-<div class="toolbar"><div class="tabs" role="tablist" aria-label="Sonuç kategorileri"><button class="tab active" data-tab="absent">Cevap işaretlemeyenler</button><button class="tab" data-tab="missing">Dosyada olmayanlar</button><button class="tab" data-tab="present">Cevaplayanlar</button><button class="tab" data-tab="all">Tüm öğrenciler</button><button class="tab" data-tab="unknown">Eşleşmeyenler</button></div><select id="classFilter" aria-label="Sınıfa göre filtrele"><option value="all">Tüm sınıflar</option><option value="8A">8A</option><option value="8B">8B</option><option value="8C">8C</option><option value="8D">8D</option></select><input id="search" type="search" placeholder="Ad veya numara ara" aria-label="Öğrenci ara"></div>
+<div class="stats"><div class="stat abs"><div class="num" id="missingStat">—</div><div class="label">Dosyada bulunmayan</div></div><div class="stat abs"><div class="num" id="absentStat">—</div><div class="label">Cevap işaretlemeyen</div></div><div class="stat present"><div class="num" id="presentStat">—</div><div class="label">Cevaplayan</div></div><div class="stat"><div class="num" id="unknownStat">—</div><div class="label">Eşleşmeyen kayıt</div></div><div class="stat"><div class="num" id="totalStat">0</div><div class="label">Toplam öğrenci</div></div></div>
+<div class="toolbar"><div class="tabs" role="tablist" aria-label="Sonuç kategorileri"><button class="tab active" data-tab="missing">Dosyada olmayanlar</button><button class="tab" data-tab="absent">Cevap işaretlemeyenler</button><button class="tab" data-tab="present">Cevaplayanlar</button><button class="tab" data-tab="unknown">Eşleşmeyenler</button><button class="tab" data-tab="all">Tüm öğrenciler</button></div><select id="classFilter" aria-label="Sınıfa göre filtrele"><option value="all">Tüm sınıflar</option><option value="8A">8A</option><option value="8B">8B</option><option value="8C">8C</option><option value="8D">8D</option></select><input id="search" type="search" placeholder="Ad veya numara ara" aria-label="Öğrenci ara"></div>
 <div class="scroll"><table><thead id="tableHead"><tr><th>Sınıf</th><th>Okul no</th><th>Adı soyadı</th><th>Durum</th></tr></thead><tbody id="tableBody"><tr><td colspan="4" class="empty">Sonuçları görmek için dosyaları yükleyin.</td></tr></tbody></table></div><div id="resultsNotice" class="notice">Dosyada olup cevap işaretlemeyenler ve dosyada hiç bulunmayanlar ayrı kategorilerdir.</div></section>
 </main><footer class="footer"><div class="footer-credit">Ufuk Korkmaz- 2026</div><div>Veriler cihazınızda işlenir. Sınıf listesi bu tarayıcıda saklanır; sınav dosyası kaydedilmez.</div></footer></div>
 <dialog id="editor"><form method="dialog" id="editorForm"><div class="headrow"><h2>Sınıf listesini düzenle</h2><button class="btn" value="cancel" aria-label="Kapat">✕</button></div><p class="helper">Her satırda bir öğrenci olmalı. Örnek: <code>sınıf,No,ad ve soyad</code> ardından <code>8A,45,Ayşe Yılmaz</code>. Sekme, noktalı virgül ve boşlukla ayrılmış veriler de desteklenir.</p><textarea id="rosterText" spellcheck="false" placeholder="sınıf,No,ad ve soyad&#10;8A,45,Ayşe Yılmaz&#10;8A,654,Mehmet Demir&#10;8B,6,Zeynep Kaya"></textarea><div id="editorError" class="status hidden bad"></div><div class="actions" style="justify-content:flex-end;margin-top:13px"><button class="btn" value="cancel">İptal</button><button class="btn btn-primary" id="savePaste" value="save">Listeyi kaydet</button></div></form></dialog>
 <script>
 (()=>{'use strict';
 const KEY='exam-attendance-roster-v1', CLASSES={'801':'8A','802':'8B','803':'8C','804':'8D'}, $=id=>document.getElementById(id);
-let roster=[],records=[],examLoaded=false,rosterRaw='',tab='absent',examName='';
+let roster=[],records=[],examLoaded=false,rosterRaw='',tab='missing',examName='';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function normClass(v){let s=String(v??'').trim().toUpperCase().replace(/\s+/g,'').replace(/[-_]/g,'');if(CLASSES[s])return CLASSES[s];if(/^8[A-D]$/.test(s))return s;return null}
 function normNum(v){let s=String(v??'').trim().replace(/^['"\s]+|['"\s]+$/g,'');if(!/^\d{1,3}$/.test(s))return null;return String(Number(s))}
@@ -97,8 +224,27 @@ function updateStepGlow(){
   el.classList.toggle('is-complete',(id==='rosterPanel'&&roster.length>0)||(id==='examPanel'&&examLoaded));
  }
 }
+function updateUsagePanel(){
+ const ready=roster.length>0&&examLoaded;
+ const badge=$('usageBadge');
+ badge.textContent=ready?'Tamamlandı':roster.length?'Sınav bekleniyor':'Hazırlanıyor';
+ badge.classList.toggle('done',ready);
+ const states=[
+  ['usageRoster','usageRosterDetail',roster.length>0,roster.length?roster.length+' öğrenci kayıtlı':'Henüz yüklenmedi'],
+  ['usageExam','usageExamDetail',examLoaded,examLoaded?(examName||'Sınav dosyası yüklendi'):'Henüz yüklenmedi'],
+  ['usageAnalysis','usageAnalysisDetail',ready,ready?'Sonuçlar hazır':roster.length?'Sınav dosyası bekleniyor':'Dosyalar bekleniyor']
+ ];
+ const activeIndex=!roster.length?0:!examLoaded?1:2;
+ states.forEach(([id,detail,done,description],i)=>{
+  const row=$(id);row.classList.toggle('done',done);row.classList.toggle('current',i===activeIndex);
+  $(detail).textContent=description;
+  row.querySelector('.usage-dot').textContent=done?'✓':String(i+1);
+  row.querySelector('.usage-mark').textContent=done?'✓':i===activeIndex?'›':'—';
+ });
+}
 function update(){
  updateStepGlow();
+ updateUsagePanel();
  let {list,unknown}=data(),answered=list.filter(s=>s.status==='answered').length,noanswers=list.filter(s=>s.status==='noanswers').length,missing=list.filter(s=>s.status==='missing').length;
  $('savedCount').textContent=roster.length?roster.length+' öğrenci':'Liste yok';
  setStatus('rosterStatus',roster.length?roster.length+' öğrenci yerel olarak kaydedildi. Aynı tarayıcıda yeniden açtığınızda liste korunur.':'Henüz kayıtlı sınıf listesi yok.',roster.length?'good':'');
