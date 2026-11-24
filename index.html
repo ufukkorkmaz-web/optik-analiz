@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exam Attendance Checker</title>
+<style>
+:root{color-scheme:light;--bg:#f6f7fb;--card:#fff;--ink:#16213a;--muted:#63708a;--border:#e1e5ee;--primary:#3057cd;--primary-bg:#eaf0ff;--red:#b73c3c;--red-bg:#fff0f0;--green:#137a53;--green-bg:#e9f8f0;--shadow:0 10px 30px rgba(25,37,75,.06)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}.wrap{max-width:1140px;margin:auto;padding:30px 22px 60px}.hero{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:24px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--primary)}h1{font-size:clamp(27px,4vw,38px);letter-spacing:-.04em;line-height:1.12;margin:5px 0 8px}h2{font-size:17px;margin:0 0 15px;letter-spacing:-.02em}.sub{color:var(--muted);margin:0;max-width:690px}.pill{border:1px solid var(--border);background:#fff;color:var(--muted);border-radius:999px;padding:6px 12px;font-size:12px;white-space:nowrap}.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:21px;box-shadow:var(--shadow)}.panel-wide{grid-column:1/-1}.headrow{display:flex;align-items:center;justify-content:space-between;gap:12px}.helper{font-size:13px;color:var(--muted);margin:0 0 14px}.drop{border:2px dashed #c9d3ea;background:#fafbff;border-radius:13px;padding:22px 16px;text-align:center;transition:.2s}.drop.drag{border-color:var(--primary);background:var(--primary-bg)}.drop strong{display:block;font-size:15px}.drop span{display:block;color:var(--muted);font-size:12px;margin:7px 0 12px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:9px 13px;font-weight:700;font-size:13px;border:1px solid var(--border);background:white;color:var(--ink);text-decoration:none;gap:7px}.btn:hover{background:#f3f5fa}.btn-primary{background:var(--primary);color:white;border-color:var(--primary)}.btn-primary:hover{background:#2347b7}.btn-danger{color:var(--red);border-color:#f0cece}.actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.small{font-size:12px;color:var(--muted)}.status{font-size:13px;margin-top:14px;border-radius:9px;background:#f5f7fd;padding:11px 12px;min-height:40px}.status.good{background:var(--green-bg);color:var(--green)}.status.bad{background:var(--red-bg);color:var(--red)}.status.warn{background:#fff7e7;color:#815b11}.map{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 0}.map span{background:#f1f4f9;color:#4d5d77;border:1px solid var(--border);font-size:12px;padding:4px 8px;border-radius:7px}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:17px 0}.stat{border:1px solid var(--border);border-radius:12px;padding:14px 15px;background:white}.stat .num{font-size:29px;font-weight:800;letter-spacing:-.04em;line-height:1.2}.stat .label{color:var(--muted);font-size:12px;margin-top:5px}.stat.abs .num{color:var(--red)}.stat.present .num{color:var(--green)}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:12px 0 15px}.toolbar input,.toolbar select{min-height:39px;border:1px solid var(--border);border-radius:9px;background:white;padding:7px 10px;color:var(--ink)}.toolbar input{flex:1;min-width:165px}.tabs{display:flex;gap:5px;padding:4px;background:#eff2f8;border-radius:10px}.tab{background:none;border:0;padding:7px 11px;border-radius:7px;font-weight:700;font-size:13px;color:#596987}.tab.active{background:white;color:var(--primary);box-shadow:0 1px 4px #dae0eb}.scroll{overflow:auto;border:1px solid var(--border);border-radius:11px;max-height:480px}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}th{font-size:12px;color:#67748c;background:#f7f9fd;position:sticky;top:0;z-index:1}th,td{padding:11px 14px;border-bottom:1px solid #edf0f5}tr:last-child td{border-bottom:0}td{font-size:13px}.student{font-weight:700}.tag{display:inline-block;padding:3px 8px;font-size:11px;border-radius:100px;font-weight:750}.tag.present{background:var(--green-bg);color:var(--green)}.tag.absent{background:var(--red-bg);color:var(--red)}.empty{text-align:center;padding:40px 10px;color:var(--muted)}.notice{color:var(--muted);font-size:12px;margin-top:11px}.divider{border:0;border-top:1px solid var(--border);margin:17px 0}.row-flex{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.linkbtn{border:0;background:transparent;text-decoration:underline;color:var(--primary);padding:0;font-size:13px}.hidden{display:none!important}textarea{width:100%;min-height:120px;border:1px solid var(--border);border-radius:9px;padding:11px;resize:vertical}label{font-size:13px;font-weight:700}dialog{max-width:min(92vw,650px);border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 70px #18243d55;padding:25px;width:100%}dialog::backdrop{background:#10172d80}code{background:#f1f3f8;padding:2px 4px;border-radius:4px}.footer{text-align:center;font-size:12px;color:var(--muted);margin-top:22px}.micro{font-size:11px;color:var(--muted)}@media(max-width:750px){.layout{grid-template-columns:1fr}.panel-wide{grid-column:auto}.stats{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column}.wrap{padding:22px 13px 40px}.panel{padding:17px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero"><div><div class="eyebrow">Student assessment tools</div><h1>Exam Attendance Checker</h1><p class="sub">Find students whose exam records contain no A, B, C or D answers, and export their names. Everything stays in this browser.</p></div><div class="pill">● Local &amp; offline · v1.4</div></header>
+<main class="layout">
+<section class="panel"><div class="headrow"><h2>1. Saved class list</h2><span class="pill" id="savedCount">No roster</span></div><p class="helper">Upload once. Your class list will remain on this device until you replace or delete it.</p><div class="drop" id="rosterDrop"><strong>Upload your class list</strong><span>Excel (.xlsx), CSV or TXT • Columns: sınıf, No, ad ve soyad (or Class, Number, Name)</span><button class="btn btn-primary" id="rosterBtn">Choose class list</button><input class="hidden" type="file" id="rosterFile" accept=".xlsx,.csv,.txt,.tsv,text/plain,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></div><div id="rosterStatus" class="status">No class list saved yet.</div><div class="actions" style="margin-top:12px"><button class="btn" id="pasteBtn">Paste / edit list</button><button class="btn" id="downloadTemplate">Download example</button><button class="btn btn-danger" id="deleteRoster" disabled>Delete saved list</button></div></section>
+<section class="panel"><div class="headrow"><h2>2. Exam file</h2><span class="pill" id="examCount">Not loaded</span></div><p class="helper">Upload DAT or TXT. Lines containing only an ID are flagged as no answers; lines containing A/B/C/D are answered.</p><div class="drop" id="examDrop"><strong>Upload an exam file</strong><span>DAT or TXT • e.g. 80100654 = class 8A, student 654</span><button class="btn btn-primary" id="examBtn">Choose exam file</button><input class="hidden" type="file" id="examFile" accept=".dat,.txt,text/plain,application/octet-stream"></div><div id="examStatus" class="status">No exam file uploaded.</div><div class="map"><span>801 → 8A</span><span>802 → 8B</span><span>803 → 8C</span><span>804 → 8D</span></div></section>
+<section class="panel panel-wide"><div class="headrow"><h2 style="margin-bottom:0">3. Attendance results</h2><div class="actions"><button class="btn btn-primary" id="exportCategoryBtn" disabled>Export current tab CSV</button><button class="btn" id="exportBtn" disabled>Export all results CSV</button></div></div><div class="stats"><div class="stat"><div class="num" id="totalStat">0</div><div class="label">Students in roster</div></div><div class="stat present"><div class="num" id="presentStat">—</div><div class="label">Answered</div></div><div class="stat abs"><div class="num" id="absentStat">—</div><div class="label">No answers</div></div><div class="stat abs"><div class="num" id="missingStat">—</div><div class="label">Missing from file</div></div><div class="stat"><div class="num" id="unknownStat">—</div><div class="label">Unmatched exam IDs</div></div></div><div class="toolbar"><div class="tabs" role="tablist"><button class="tab active" data-tab="absent">No answers</button><button class="tab" data-tab="missing">Missing from file</button><button class="tab" data-tab="present">Answered</button><button class="tab" data-tab="all">All students</button><button class="tab" data-tab="unknown">Unmatched</button></div><select id="classFilter" aria-label="Filter class"><option value="all">All classes</option><option value="8A">8A</option><option value="8B">8B</option><option value="8C">8C</option><option value="8D">8D</option></select><input id="search" type="search" placeholder="Search name or number" aria-label="Search students"></div><div class="scroll"><table><thead id="tableHead"><tr><th>Class</th><th>School number</th><th>Student name</th><th>Status</th></tr></thead><tbody id="tableBody"><tr><td colspan="4" class="empty">Upload your class list and exam file to see attendance.</td></tr></tbody></table></div><div id="resultsNotice" class="notice">Only students with an exam ID but no A/B/C/D answers are flagged. Students missing from the exam file have their own Missing from file tab. Leading zeros are ignored.</div><div id="unknownPanel" class="hidden"><hr class="divider"><h2>Exam records not found in the roster</h2><p class="helper">Review these records for missing or incorrect class-list entries. These are distinct class + student-number combinations.</p><div id="unknownList"></div></div></section>
+</main><p class="footer">Runs entirely on your device. Class lists are saved to this browser's local storage; exam files are not stored.</p>
+</div>
+<dialog id="editor"><form method="dialog" id="editorForm"><div class="headrow"><h2>Paste or edit class list</h2><button class="btn" value="cancel" aria-label="Close">✕</button></div><p class="helper">One student per line. Use a header like <code>Class,Number,Name</code> and then <code>8A,45,Ayşe Yılmaz</code>. Tabs and semicolons work too. You can also enter <code>8A 45 Ayşe Yılmaz</code>.</p><textarea id="rosterText" spellcheck="false" placeholder="Class,Number,Name&#10;8A,45,Ayşe Yılmaz&#10;8A,654,Mehmet Demir&#10;8B,6,Zeynep Kaya"></textarea><div id="editorError" class="status hidden bad"></div><div class="actions" style="justify-content:flex-end;margin-top:15px"><button class="btn" value="cancel">Cancel</button><button class="btn btn-primary" id="savePaste" value="save">Save class list</button></div></form></dialog>
+<script>
+(()=>{'use strict';
+const KEY='exam-attendance-roster-v1', CLASSES={'801':'8A','802':'8B','803':'8C','804':'8D'}, $=id=>document.getElementById(id);
+let roster=[],records=[],examLoaded=false,rosterRaw='',tab='absent',examName='';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function normClass(v){let s=String(v??'').trim().toUpperCase().replace(/\s+/g,'').replace(/[-_]/g,'');if(CLASSES[s])return CLASSES[s];if(/^8[A-D]$/.test(s))return s;return null}
+function normNum(v){let s=String(v??'').trim().replace(/^['"\s]+|['"\s]+$/g,'');if(!/^\d{1,3}$/.test(s))return null;return String(Number(s))}
+function tokenize(s){const clean=s.replace(/^\uFEFF/,'').trim();if(clean.includes('\t'))return clean.split('\t').map(x=>x.trim().replace(/^"|"$/g,''));let sep=clean.includes(';')?';':clean.includes(',')?',':null;if(sep){let fields=[],cur='',quoted=false;for(let i=0;i<clean.length;i++){let c=clean[i];if(c==='"'){if(quoted&&clean[i+1]==='"'){cur+='"';i++}else quoted=!quoted}else if(c===sep&&!quoted){fields.push(cur.trim());cur=''}else cur+=c}fields.push(cur.trim());return fields}return clean.split(/\s+/)}
+function parseRoster(text){const lines=text.replace(/^\uFEFF/,'').split(/\r?\n/).map(x=>x.trim()).filter(x=>x&&!x.startsWith('#'));if(!lines.length)throw Error('The class list is empty.');let out=[],errors=[],seen=new Set(),header=null;
+for(let i=0;i<lines.length;i++){let fields=tokenize(lines[i]);if(i===0){let low=fields.map(x=>x.toLocaleLowerCase('en').replace(/[\s_-]/g,''));let c=low.findIndex(x=>['class','classroom','sinif','sınıf','sube','şube'].includes(x));let n=low.findIndex(x=>['number','no','schoolno','schoolnumber','studentno','studentnumber','okulno','öğrencino','ogrencino'].includes(x));let name=low.findIndex(x=>['name','student','studentname','fullname','full name','adsoyad','adısoyadı','adisoyadi','advesoyad','advesoyadı','ad soyad','adi soyadi','nameandsurname','fullname'].includes(x));if(c>=0&&n>=0&&name>=0){header={c,n,name};continue}}
+let cl,num,name;if(header){cl=normClass(fields[header.c]);num=normNum(fields[header.n]);name=fields[header.name]??'';if(fields.length>Math.max(header.c,header.n,header.name)+1 && header.name===Math.max(header.c,header.n,header.name))name=fields.slice(header.name).join(' ')}else{let idx=fields.findIndex(f=>normClass(f));if(idx>=0){cl=normClass(fields[idx]);let candidates=fields.map((f,j)=>j!==idx&&normNum(f)!==null?j:-1).filter(j=>j>=0);if(candidates.length){let ni=candidates[0];num=normNum(fields[ni]);name=fields.filter((_,j)=>j!==idx&&j!==ni).join(' ')} } }
+name=String(name??'').trim().replace(/^"|"$/g,'');if(!cl||num===null||!name){errors.push(i+1);continue}let key=cl+':'+num;if(seen.has(key)){errors.push(i+1);continue}seen.add(key);out.push({className:cl,number:num,name})}
+if(!out.length)throw Error('No valid students found. Use sınıf,No,ad ve soyad (for example: 8A,45,Ayşe Yılmaz), or Class,Number,Name.');if(errors.length)throw Error('Could not safely import the list. Check duplicate/invalid rows at line(s): '+errors.slice(0,10).join(', ')+(errors.length>10?'…':'')+'. No changes were saved.');return out}
+function parseExam(text){
+ const found=new Map();
+ // Each exam record starts with an eight-digit (or longer) numeric ID.
+ // Only letters after that ID and on the same line count as actual answers.
+ for(const line of text.split(/\r?\n/)){
+  const match=line.match(/^\s*(80[1-4]\d{5,})(?!\d)(.*)$/i);
+  if(!match)continue;
+  const id=match[1],answers=match[2],hasAnswers=/[ABCD]/i.test(answers);
+  const cls=CLASSES[id.slice(0,3)],num=String(Number(id.slice(-3))),key=cls+':'+num;
+  const entry=found.get(key);
+  if(entry){entry.count++;entry.answered=entry.answered||hasAnswers}
+  else found.set(key,{className:cls,number:num,raw:id,count:1,answered:hasAnswers});
+ }
+ return [...found.values()]
+}
+function setStatus(id,message,type=''){let el=$(id);el.textContent=message;el.className='status'+(type?' '+type:'')}
+function saveRoster(text){let parsed=parseRoster(text);try{localStorage.setItem(KEY,JSON.stringify({raw:text,students:parsed}))}catch(e){throw Error('Unable to save the roster in browser storage. Try clearing browser storage or using a normal browser window.')}roster=parsed;rosterRaw=text;update()}
+function loadSaved(){try{let s=localStorage.getItem(KEY);if(s){let val=JSON.parse(s);if(Array.isArray(val.students)){roster=val.students.filter(s=>normClass(s.className)&&normNum(s.number)!==null&&s.name).map(s=>({className:normClass(s.className),number:normNum(s.number),name:String(s.name)}));rosterRaw=val.raw||'Class,Number,Name\n'+roster.map(s=>[s.className,s.number,s.name].join(',')).join('\n')}}}catch(e){setStatus('rosterStatus','Could not read previously saved roster.','bad')}update()}
+function data(){
+ const byKey=new Map(records.map(r=>[r.className+':'+r.number,r]));
+ const list=roster.map(s=>{
+  const record=byKey.get(s.className+':'+s.number);
+  return {...s,status:!record?'missing':record.answered?'answered':'noanswers'};
+ });
+ const known=new Set(roster.map(s=>s.className+':'+s.number));
+ const unknown=records.filter(r=>!known.has(r.className+':'+r.number));
+ return {list,unknown};
+}
+function update(){
+ let {list,unknown}=data(),answered=list.filter(s=>s.status==='answered').length,noanswers=list.filter(s=>s.status==='noanswers').length,missing=list.filter(s=>s.status==='missing').length;
+ $('savedCount').textContent=roster.length?roster.length+' students':'No roster';
+ setStatus('rosterStatus',roster.length?roster.length+' students saved locally. Your roster will be available next time you open this app in the same browser.':'No class list saved yet.',roster.length?'good':'');
+ $('deleteRoster').disabled=!roster.length;
+ $('examCount').textContent=examLoaded?records.length+' IDs':'Not loaded';
+ $('totalStat').textContent=roster.length;
+ $('presentStat').textContent=examLoaded&&roster.length?answered:'—';
+ $('absentStat').textContent=examLoaded&&roster.length?noanswers:'—';
+ $('missingStat').textContent=examLoaded&&roster.length?missing:'—';
+ $('unknownStat').textContent=examLoaded&&roster.length?unknown.length:'—';
+ $('exportBtn').disabled=!(roster.length&&examLoaded);
+ $('exportCategoryBtn').disabled=!(roster.length&&examLoaded);
+ renderTable();
+}
+function renderTable(){
+ const {list,unknown}=data(),q=$('search').value.trim().toLocaleLowerCase(),cl=$('classFilter').value;
+ let ready=roster.length&&examLoaded,rows=[];
+ if(ready){
+  if(tab==='unknown')rows=unknown.filter(s=>(cl==='all'||s.className===cl)&&(s.number.includes(q)||s.raw.includes(q)||s.className.toLowerCase().includes(q)));
+  else rows=list.filter(s=>(cl==='all'||s.className===cl)&&(!q||s.name.toLocaleLowerCase().includes(q)||s.number.includes(q)||s.className.toLowerCase().includes(q))&&(tab==='all'||(tab==='present'?s.status==='answered':tab==='missing'?s.status==='missing':s.status==='noanswers')));
+  rows.sort((a,b)=>a.className.localeCompare(b.className)||Number(a.number)-Number(b.number)||String(a.name||'').localeCompare(String(b.name||'')));
+ }
+ $('tableHead').innerHTML=tab==='unknown'?'<tr><th>Class</th><th>School number</th><th>Full exam ID</th><th>Record</th></tr>':'<tr><th>Class</th><th>School number</th><th>Student name</th><th>Status</th></tr>';
+ const statusLabel={answered:'Answered',noanswers:'No answers',missing:'Missing from file'};
+ $('tableBody').innerHTML=!ready?'<tr><td colspan="4" class="empty">Upload both a class list and an exam file to see results.</td></tr>':!rows.length?'<tr><td colspan="4" class="empty">No matching records in this view.</td></tr>':rows.map(s=>tab==='unknown'?`<tr><td>${esc(s.className)}</td><td>${esc(s.number)}</td><td>${esc(s.raw)}</td><td>${s.answered?'Answered':'No answers'}</td></tr>`:`<tr><td>${esc(s.className)}</td><td>${esc(s.number)}</td><td class="student">${esc(s.name)}</td><td><span class="tag ${s.status==='answered'?'present':'absent'}">${statusLabel[s.status]}</span></td></tr>`).join('');
+ $('resultsNotice').textContent=ready?(tab==='unknown'?rows.length+' ID(s) not in the saved class list.':rows.length+' student(s) shown. Only lines with no A/B/C/D after their ID are flagged as No answers; students without an exam record appear only in Missing from file.'):'The first three ID digits determine the class; the last three determine the school number. Leading zeros are ignored. Only ID-only lines are flagged.';
+}
+async function readText(file){let buf=await file.arrayBuffer();let utf8=new TextDecoder('utf-8',{fatal:false}).decode(buf);if(utf8.includes('\uFFFD')){try{let legacy=new TextDecoder('windows-1254').decode(buf);if((legacy.match(/\uFFFD/g)||[]).length<(utf8.match(/\uFFFD/g)||[]).length)return legacy}catch(e){}}return utf8}
+function fileDrop(area,input,callback){$(area).addEventListener('dragover',e=>{e.preventDefault();$(area).classList.add('drag')});$(area).addEventListener('dragleave',()=>$(area).classList.remove('drag'));$(area).addEventListener('drop',e=>{e.preventDefault();$(area).classList.remove('drag');if(e.dataTransfer.files[0])callback(e.dataTransfer.files[0])});$(input).addEventListener('change',e=>{if(e.target.files[0])callback(e.target.files[0]);e.target.value=''})}
+// A standalone Office Open XML (.xlsx) reader; no external scripts or network needed.
+async function unzipXlsx(file){
+ const bytes=new Uint8Array(await file.arrayBuffer()),view=new DataView(bytes.buffer),entries=new Map(),decoder=new TextDecoder();
+ const u16=p=>view.getUint16(p,true),u32=p=>view.getUint32(p,true);
+ let end=-1;for(let i=bytes.length-22;i>=Math.max(0,bytes.length-65557);i--){if(u32(i)===0x06054b50){end=i;break}}
+ if(end<0)throw Error('Not a valid .xlsx workbook. Older .xls files should be saved as .xlsx first.');
+ const count=u16(end+10);let pos=u32(end+16);
+ if(count>10000)throw Error('Workbook contains too many ZIP entries.');
+ for(let i=0;i<count;i++){
+  if(pos+46>bytes.length||u32(pos)!==0x02014b50)throw Error('Invalid Excel ZIP directory.');
+  const method=u16(pos+10),packed=u32(pos+20),unpacked=u32(pos+24),nameLen=u16(pos+28),extra=u16(pos+30),comment=u16(pos+32),offset=u32(pos+42);
+  const name=decoder.decode(bytes.subarray(pos+46,pos+46+nameLen));pos+=46+nameLen+extra+comment;
+  if(!/^xl\/(sharedStrings\.xml|worksheets\/sheet\d+\.xml)$/.test(name))continue;
+  if(unpacked>30*1024*1024)throw Error('Excel worksheet is too large to load safely.');
+  if(offset+30>bytes.length||u32(offset)!==0x04034b50)throw Error('Invalid Excel ZIP entry.');
+  const start=offset+30+u16(offset+26)+u16(offset+28);
+  if(start+packed>bytes.length)throw Error('Truncated Excel workbook.');
+  let raw=bytes.slice(start,start+packed);
+  if(method===8){
+   if(typeof DecompressionStream==='undefined')throw Error('This browser cannot open Excel files offline. Try the latest Chrome or Edge, or save as CSV.');
+   let stream=new Blob([raw]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+   raw=new Uint8Array(await new Response(stream).arrayBuffer());
+  }else if(method!==0)throw Error('Unsupported Excel compression method.');
+  entries.set(name,decoder.decode(raw));
+ }
+ return entries;
+}
+function xlsxGrid(xml,strings){
+ const doc=new DOMParser().parseFromString(xml,'application/xml');
+ if(doc.querySelector('parsererror'))throw Error('Unable to parse Excel worksheet XML.');
+ const rows=[];
+ for(const row of doc.getElementsByTagName('row')){
+  let fields=[],next=0;
+  for(const cell of row.getElementsByTagName('c')){
+   const ref=cell.getAttribute('r')||'',letters=/^[A-Z]+/i.exec(ref),type=cell.getAttribute('t');
+   let col=next;
+   if(letters){col=0;for(const ch of letters[0].toUpperCase())col=col*26+ch.charCodeAt(0)-64;col--}
+   if(col>100)continue;
+   const value=cell.getElementsByTagName('v')[0],inline=cell.getElementsByTagName('is')[0];
+   let text=value?.textContent||'';
+   if(type==='s')text=strings[Number(text)]??'';
+   else if(type==='inlineStr'&&inline)text=Array.from(inline.getElementsByTagName('t')).map(t=>t.textContent).join('');
+   else if(type==='b')text=text==='1'?'TRUE':'FALSE';
+   fields[col]=text;next=col+1;
+  }
+  if(fields.some(x=>String(x??'').trim()))rows.push(fields);
+ }
+ return rows;
+}
+async function excelRoster(file){
+ const entries=await unzipXlsx(file),shared=entries.get('xl/sharedStrings.xml');let strings=[];
+ if(shared){const doc=new DOMParser().parseFromString(shared,'application/xml');if(doc.querySelector('parsererror'))throw Error('Unable to read Excel shared strings.');
+  strings=Array.from(doc.getElementsByTagName('si'),si=>Array.from(si.getElementsByTagName('t'),t=>t.textContent).join(''));}
+ const sheets=[...entries.keys()].filter(k=>/^xl\/worksheets\/sheet\d+\.xml$/.test(k)).sort((a,b)=>Number(a.match(/sheet(\d+)/)[1])-Number(b.match(/sheet(\d+)/)[1]));
+ if(!sheets.length)throw Error('No worksheet found in this Excel file.');
+ let messages=[];
+ for(const sheet of sheets){
+  const grid=xlsxGrid(entries.get(sheet),strings);
+  const toCsv=fields=>fields.map(v=>'"'+String(v??'').replace(/"/g,'""').replace(/[\r\n]+/g,' ')+'"').join(',');
+  const text=grid.map(toCsv).join('\n');
+  try{parseRoster(text);return text}catch(e){messages.push(sheet.split('/').pop()+': '+e.message)}
+ }
+ throw Error('Could not find a valid class list in the Excel workbook. Expected columns sınıf, No, ad ve soyad (or Class, Number, Name). '+messages.slice(0,2).join(' | '));
+}
+async function onRoster(file){if(!/\.(xlsx|csv|txt|tsv)$/i.test(file.name)){setStatus('rosterStatus','Use an Excel .xlsx, CSV, TSV or TXT class list. For old .xls workbooks, save as .xlsx first.','bad');return}try{const text=/\.xlsx$/i.test(file.name)?await excelRoster(file):await readText(file);saveRoster(text);setStatus('rosterStatus',roster.length+' students loaded from '+file.name+' and saved in this browser.','good')}catch(e){setStatus('rosterStatus',e.message,'bad')}}
+async function onExam(file){if(!/\.(dat|txt)$/i.test(file.name)){setStatus('examStatus','Select a .dat or .txt exam file.','bad');return}try{let found=parseExam(await readText(file));if(!found.length){setStatus('examStatus','No class-coded IDs found. Expected 801, 802, 803 or 804 followed by at least 3 digits. The previous exam, if any, was kept.','bad');return}records=found;examLoaded=true;examName=file.name;let total=records.reduce((n,x)=>n+x.count,0),blank=records.filter(x=>!x.answered).length;setStatus('examStatus',file.name+': '+total+' record(s), '+blank+' distinct ID(s) without A/B/C/D answers.','good');update()}catch(e){setStatus('examStatus','Unable to read exam file: '+e.message,'bad')}}
+$('rosterBtn').addEventListener('click',()=> $('rosterFile').click());$('examBtn').addEventListener('click',()=> $('examFile').click());fileDrop('rosterDrop','rosterFile',onRoster);fileDrop('examDrop','examFile',onExam);
+$('pasteBtn').addEventListener('click',()=>{$('rosterText').value=rosterRaw;$('editorError').classList.add('hidden');$('editor').showModal()});$('editorForm').addEventListener('submit',e=>{if(e.submitter?.value!=='save')return;e.preventDefault();try{saveRoster($('rosterText').value);$('editor').close();setStatus('rosterStatus',roster.length+' students saved locally.','good')}catch(err){$('editorError').textContent=err.message;$('editorError').classList.remove('hidden')}});
+$('deleteRoster').addEventListener('click',()=>{if(!confirm('Permanently delete the saved class list from this browser?'))return;try{localStorage.removeItem(KEY);roster=[];rosterRaw='';update()}catch(e){setStatus('rosterStatus','Could not delete saved class list.','bad')}});
+for(const b of document.querySelectorAll('.tab'))b.addEventListener('click',()=>{tab=b.dataset.tab;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));renderTable()});$('classFilter').addEventListener('change',renderTable);$('search').addEventListener('input',renderTable);
+function download(content,name,type='text/csv;charset=utf-8'){let a=document.createElement('a'),url=URL.createObjectURL(new Blob(['\uFEFF'+content],{type}));a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+const csvCell=s=>'"'+String(s??'').replace(/"/g,'""')+'"';$('downloadTemplate').addEventListener('click',()=>download('Class,Number,Name\r\n8A,45,Ayşe Yılmaz\r\n8A,654,Mehmet Demir\r\n8B,6,Zeynep Kaya\r\n8C,21,Ali Can\r\n8D,100,Elif Kaya\r\n','class_list_example.csv'));
+$('exportCategoryBtn').addEventListener('click',()=>{
+ if(!examLoaded||!roster.length)return;
+ const {list,unknown}=data(),cl=$('classFilter').value,q=$('search').value.trim().toLocaleLowerCase();
+ const filtered=tab==='unknown'
+ ? unknown.filter(s=>(cl==='all'||s.className===cl)&&(s.number.includes(q)||s.raw.includes(q)||s.className.toLowerCase().includes(q)))
+ : list.filter(s=>(cl==='all'||s.className===cl)&&(!q||s.name.toLocaleLowerCase().includes(q)||s.number.includes(q)||s.className.toLowerCase().includes(q))&&(tab==='all'||(tab==='present'?s.status==='answered':tab==='missing'?s.status==='missing':s.status==='noanswers')));
+ filtered.sort((a,b)=>a.className.localeCompare(b.className)||Number(a.number)-Number(b.number));
+ let lines=tab==='unknown'?['Class,School Number,Full Exam ID,Occurrences,Answer status']:['Class,School Number,Student Name,Status'];
+ for(const s of filtered)lines.push((tab==='unknown'?[s.className,s.number,s.raw,s.count,s.answered?'Answered':'No answers']:[s.className,s.number,s.name,({answered:'Answered',noanswers:'No answers',missing:'Missing from file'}[s.status])]).map(csvCell).join(','));
+ download(lines.join('\r\n')+'\r\n','exam_'+({absent:'no_answers',missing:'missing_from_file',present:'answered',all:'all_students',unknown:'unmatched_ids'}[tab])+'.csv');
+});
+$('exportBtn').addEventListener('click',()=>{if(!examLoaded||!roster.length)return;let {list,unknown}=data();let lines=['Class,School Number,Student Name,Status'];for(let s of list.sort((a,b)=>a.className.localeCompare(b.className)||Number(a.number)-Number(b.number)))lines.push([s.className,s.number,s.name,({answered:'Answered',noanswers:'No answers',missing:'Missing from file'}[s.status])].map(csvCell).join(','));lines.push('');lines.push('Unmatched Exam IDs');lines.push('Class,School Number,Full Exam ID,Occurrences,Answer status');for(let s of unknown)lines.push([s.className,s.number,s.raw,s.count,s.answered?'Answered':'No answers'].map(csvCell).join(','));download(lines.join('\r\n')+'\r\n','exam_no_answers_results.csv')});
+loadSaved();
+})();
+</script>
+</body></html>
