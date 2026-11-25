@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sınav Yoklama Kontrolü — v2.3</title>
+<title>Sınav Yoklama Kontrolü — v2.5</title>
 <style>
 :root{color-scheme:light;--bg:#f5f7fa;--surface:#fff;--ink:#1b293e;--muted:#65748a;--line:#e1e6ef;--blue:#2856b7;--blueLight:#eaf0fc;--red:#ad4044;--redLight:#fceff0;--green:#167753;--greenLight:#e8f7f0}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.48;cursor:not-allowed}.wrap{max-width:1480px;margin:0 auto;padding:22px 26px}.hero{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}h1{font-size:24px;letter-spacing:-.035em;line-height:1.15;margin:3px 0 5px}h2{font-size:15px;line-height:1.25;margin:0}.sub{color:var(--muted);font-size:12px;margin:0}.pill{white-space:nowrap;padding:5px 9px;border-radius:20px;background:#f0f3f8;color:#51637d;font-size:11px;font-weight:650}.hero>.pill{background:#e9f4ec;color:#26704f}.layout{display:grid;grid-template-columns:minmax(270px,350px) minmax(0,1fr);gap:16px;align-items:stretch}.leftcol{display:flex;flex-direction:column;gap:14px}.panel{border:1px solid var(--line);border-radius:13px;background:var(--surface);padding:17px}.headrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.helper{color:var(--muted);font-size:12px;margin:8px 0 12px}.drop{border:1.5px dashed #b9c7de;border-radius:9px;background:#fafcff;text-align:center;padding:16px 10px;transition:.2s}.drop.drag{background:var(--blueLight);border-color:var(--blue)}.drop strong{display:block;font-size:13px;margin-bottom:4px}.drop span{display:block;color:var(--muted);font-size:11px;margin:5px 0 10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:8px 11px;font-weight:650;font-size:12px;text-decoration:none;white-space:nowrap}.btn:hover{background:#f1f5fa}.btn-primary{background:var(--blue);border-color:var(--blue);color:white}.btn-primary:hover{background:#204996}.btn-danger{color:var(--red);border-color:#ebd7d7}.actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.status{background:#f5f7fa;border-radius:7px;color:var(--muted);font-size:11.5px;line-height:1.4;margin-top:10px;padding:9px 10px}.status.good{background:var(--greenLight);color:var(--green)}.status.bad{background:var(--redLight);color:var(--red)}.status.warn{background:#fff6e7;color:#865f17}.map{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}.map span{font-size:11px;color:#53647d;background:#f2f5f9;border-radius:5px;padding:4px 8px}.results{display:flex;flex-direction:column;min-height:0}.resultsHead{align-items:flex-start}.resultsHead .actions{justify-content:flex-end}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:15px 0}.stat{border:1px solid var(--line);background:#fff;border-radius:9px;padding:10px 11px;min-width:0}.stat .num{font-size:26px;font-weight:800;line-height:1.18;font-variant-numeric:tabular-nums}.stat .label{font-size:10.5px;color:var(--muted);margin-top:3px}.stat.present .num{color:var(--green)}.stat.abs .num{color:var(--red)}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 11px}.tabs{display:flex;gap:3px;background:#f0f3f8;border-radius:8px;padding:3px;flex-wrap:wrap}.tab{border:0;background:transparent;color:#53657e;border-radius:6px;padding:7px 9px;font-weight:650;font-size:11.5px}.tab.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px #d5dde9}.toolbar select,.toolbar input{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:8px;font-size:12px;height:34px;min-width:0}.toolbar input{flex:1;min-width:130px}.scroll{border:1px solid var(--line);border-radius:9px;overflow:auto;min-height:180px;max-height:calc(100vh - 340px);flex:1}table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:9px 12px;border-bottom:1px solid #eef1f5}th{font-size:11px;font-weight:750;background:#f7f9fc;color:#62728a;position:sticky;top:0;white-space:nowrap}td{font-size:12px}tr:last-child td{border-bottom:0}.student{font-weight:700}.tag{display:inline-block;border-radius:6px;padding:3px 7px;font-weight:700;font-size:10.5px;white-space:nowrap}.tag.present{color:var(--green);background:var(--greenLight)}.tag.absent{color:var(--red);background:var(--redLight)}.empty{text-align:center;padding:35px 9px;color:var(--muted)}.notice{color:var(--muted);font-size:11px;margin-top:9px}.footer{font-size:10.5px;color:var(--muted);margin:13px 0 0;text-align:center}.hidden{display:none!important}dialog{border:1px solid var(--line);box-shadow:0 15px 60px #1b293e44;border-radius:13px;padding:22px;width:min(580px,94vw)}dialog::backdrop{background:#14243e80}textarea{width:100%;min-height:210px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:12px}code{background:#eff2f6;padding:2px 4px;border-radius:4px}.divider{border:0;border-top:1px solid var(--line);margin:14px 0}
@@ -154,10 +154,10 @@ dialog{background:#16253a;color:var(--ink);border-color:#46607d;box-shadow:0 20p
 }
 </style></head><body>
 <div class="wrap">
-<header class="hero"><div><div class="eyebrow">Öğrenci değerlendirme</div><h1>Sınav Yoklama Kontrolü</h1><p class="sub">Sınava katılımı, cevap işaretlemeyenleri ve sınav dosyasında bulunmayanları tek ekranda inceleyin.</p></div><span class="pill">● Çevrimdışı · Yerel kayıt · v2.3</span></header>
+<header class="hero"><div><div class="eyebrow">Öğrenci değerlendirme</div><h1>Sınav Yoklama Kontrolü</h1><p class="sub">Sınava katılımı, cevap işaretlemeyenleri ve sınav dosyasında bulunmayanları tek ekranda inceleyin.</p></div><span class="pill">● Çevrimdışı · Yerel kayıt · v2.5</span></header>
 <main class="layout">
 <div class="leftcol">
-<section class="panel step-panel" id="rosterPanel"><div class="headrow"><h2>1. Kayıtlı sınıf listesi</h2><span class="pill" id="savedCount">Liste yok</span></div><p class="helper">Excel listenizi bir kez yükleyin. Değiştirene veya silene kadar bu tarayıcıda saklanır.</p><div class="drop" id="rosterDrop"><strong>Sınıf listesini yükleyin</strong><span>Excel (.xlsx), CSV, TXT · sütunlar: sınıf, No, ad ve soyad</span><button class="btn btn-primary" id="rosterBtn">Dosya seç</button><input class="hidden" type="file" id="rosterFile" accept=".xlsx,.csv,.txt,.tsv,text/plain,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></div><div id="rosterStatus" class="status" role="status">Henüz kayıtlı sınıf listesi yok.</div><div class="actions" style="margin-top:10px"><button class="btn" id="pasteBtn">Listeyi düzenle</button><button class="btn" id="downloadTemplate">Örnek indir</button><button class="btn btn-danger" id="deleteRoster" disabled>Listeyi sil</button></div></section>
+<section class="panel step-panel" id="rosterPanel"><div class="headrow"><h2>1. Kayıtlı sınıf listesi</h2><span class="pill" id="savedCount">Liste yok</span></div><p class="helper">Excel listenizi bir kez yükleyin. Değiştirene veya silene kadar bu tarayıcıda saklanır.</p><div class="drop" id="rosterDrop"><strong>Sınıf listesini yükleyin</strong><span>Excel (.xlsx), CSV, TXT · başlıklı veya başlıksız liste</span><button class="btn btn-primary" id="rosterBtn">Dosya seç</button><input class="hidden" type="file" id="rosterFile" accept=".xlsx,.csv,.txt,.tsv,text/plain,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></div><div id="rosterStatus" class="status" role="status">Henüz kayıtlı sınıf listesi yok.</div><div class="actions" style="margin-top:10px"><button class="btn" id="pasteBtn">Listeyi düzenle</button><button class="btn" id="downloadTemplate">Örnek indir</button><button class="btn btn-danger" id="deleteRoster" disabled>Listeyi sil</button></div></section>
 <section class="panel step-panel" id="examPanel"><div class="headrow"><h2>2. Sınav dosyası</h2><span class="pill" id="examCount">Yüklenmedi</span></div><p class="helper">DAT veya TXT dosyasını yükleyin. Kimlikten sonra A/B/C/D olmayan satırlar ayrı listelenir.</p><div class="drop" id="examDrop"><strong>Sınav verisini yükleyin</strong><span>.dat veya .txt · Örnek: 80100654 → 8A / 654 (0654)</span><button class="btn btn-primary" id="examBtn">Dosya seç</button><input class="hidden" type="file" id="examFile" accept=".dat,.txt,text/plain,application/octet-stream"></div><div id="examStatus" class="status" role="status">Henüz sınav dosyası yüklenmedi.</div></section>
 <section class="panel usage-panel" id="usagePanel" aria-labelledby="usageHeading">
  <div class="usage-title" id="usageHeading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg> Kullanım Durumu <span class="usage-badge" id="usageBadge">Hazırlanıyor</span></div>
@@ -170,7 +170,7 @@ dialog{background:#16253a;color:var(--ink);border-color:#46607d;box-shadow:0 20p
  </div>
 </section>
 </div>
-<section class="panel results step-panel" id="resultsPanel"><div class="headrow resultsHead"><div><h2>3. Yoklama sonuçları</h2><p class="helper" style="margin-bottom:0">İki devamsızlık durumu birbirinden ayrı gösterilir.</p></div><div class="actions"><button class="btn btn-primary" id="exportCategoryBtn" disabled>Seçili listeyi CSV indir</button><button class="btn" id="exportBtn" disabled>Tüm sonuçları indir</button></div></div>
+<section class="panel results step-panel" id="resultsPanel"><div class="headrow resultsHead"><div><h2>3. Yoklama sonuçları</h2><p class="helper" style="margin-bottom:0">İki devamsızlık durumu birbirinden ayrı gösterilir.</p></div><div class="actions"><button class="btn btn-primary" id="exportCategoryBtn" disabled>Seçili listeyi Excel indir</button><button class="btn" id="exportBtn" disabled>Tüm sonuçları Excel indir</button></div></div>
 <div class="stats"><div class="stat abs"><div class="num" id="missingStat">—</div><div class="label">Dosyada bulunmayan</div></div><div class="stat abs"><div class="num" id="absentStat">—</div><div class="label">Cevap işaretlemeyen</div></div><div class="stat present"><div class="num" id="presentStat">—</div><div class="label">Cevaplayan</div></div><div class="stat"><div class="num" id="unknownStat">—</div><div class="label">Eşleşmeyen kayıt</div></div><div class="stat"><div class="num" id="totalStat">0</div><div class="label">Toplam öğrenci</div></div></div>
 <div class="toolbar"><div class="tabs" role="tablist" aria-label="Sonuç kategorileri"><button class="tab active" data-tab="missing">Dosyada olmayanlar</button><button class="tab" data-tab="absent">Cevap işaretlemeyenler</button><button class="tab" data-tab="present">Cevaplayanlar</button><button class="tab" data-tab="unknown">Eşleşmeyenler</button><button class="tab" data-tab="all">Tüm öğrenciler</button></div><select id="classFilter" aria-label="Sınıfa göre filtrele"><option value="all">Tüm sınıflar</option></select><input id="search" type="search" placeholder="Ad veya numara ara" aria-label="Öğrenci ara"></div>
 <div class="scroll"><table><thead id="tableHead"><tr><th>Sınıf</th><th>Okul no</th><th>Adı soyadı</th><th>Durum</th></tr></thead><tbody id="tableBody"><tr><td colspan="4" class="empty">Sonuçları görmek için dosyaları yükleyin.</td></tr></tbody></table></div><div id="resultsNotice" class="notice">Dosyada olup cevap işaretlemeyenler ve dosyada hiç bulunmayanlar ayrı kategorilerdir.</div></section>
@@ -184,11 +184,53 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 function normClass(v){let s=String(v??'').trim().toUpperCase().replace(/\s+/g,'').replace(/[-_]/g,'');if(CLASSES[s])return CLASSES[s];if(/^[5-8][A-Z]$/.test(s)&&Object.values(CLASSES).includes(s))return s;return null}
 function normNum(v){let s=String(v??'').trim().replace(/^['"\s]+|['"\s]+$/g,'');if(!/^\d{1,4}$/.test(s))return null;return String(Number(s))}
 function tokenize(s){const clean=s.replace(/^\uFEFF/,'').trim();if(clean.includes('\t'))return clean.split('\t').map(x=>x.trim().replace(/^"|"$/g,''));let sep=clean.includes(';')?';':clean.includes(',')?',':null;if(sep){let fields=[],cur='',quoted=false;for(let i=0;i<clean.length;i++){let c=clean[i];if(c==='"'){if(quoted&&clean[i+1]==='"'){cur+='"';i++}else quoted=!quoted}else if(c===sep&&!quoted){fields.push(cur.trim());cur=''}else cur+=c}fields.push(cur.trim());return fields}return clean.split(/\s+/)}
-function parseRoster(text){const lines=text.replace(/^\uFEFF/,'').split(/\r?\n/).map(x=>x.trim()).filter(x=>x&&!x.startsWith('#'));if(!lines.length)throw Error('Sınıf listesi boş.');let out=[],errors=[],seen=new Set(),header=null;
-for(let i=0;i<lines.length;i++){let fields=tokenize(lines[i]);if(i===0){let low=fields.map(x=>x.toLocaleLowerCase('en').replace(/[\s_-]/g,''));let c=low.findIndex(x=>['class','classroom','sinif','sınıf','sube','şube'].includes(x));let n=low.findIndex(x=>['number','no','schoolno','schoolnumber','studentno','studentnumber','okulno','öğrencino','ogrencino'].includes(x));let name=low.findIndex(x=>['name','student','studentname','fullname','full name','adsoyad','adısoyadı','adisoyadi','advesoyad','advesoyadı','ad soyad','adi soyadi','nameandsurname','fullname'].includes(x));if(c>=0&&n>=0&&name>=0){header={c,n,name};continue}}
-let cl,num,name;if(header){cl=normClass(fields[header.c]);num=normNum(fields[header.n]);name=fields[header.name]??'';if(fields.length>Math.max(header.c,header.n,header.name)+1 && header.name===Math.max(header.c,header.n,header.name))name=fields.slice(header.name).join(' ')}else{let idx=fields.findIndex(f=>normClass(f));if(idx>=0){cl=normClass(fields[idx]);let candidates=fields.map((f,j)=>j!==idx&&normNum(f)!==null?j:-1).filter(j=>j>=0);if(candidates.length){let ni=candidates[0];num=normNum(fields[ni]);name=fields.filter((_,j)=>j!==idx&&j!==ni).join(' ')} } }
-name=String(name??'').trim().replace(/^"|"$/g,'');if(!cl||num===null||!name){errors.push(i+1);continue}let key=cl+':'+num;if(seen.has(key)){errors.push(i+1);continue}seen.add(key);out.push({className:cl,number:num,name})}
-if(!out.length)throw Error('Geçerli öğrenci bulunamadı. Sütunlar: sınıf, No, ad ve soyad (örnek: 8A,45,Ayşe Yılmaz).');if(errors.length)throw Error('Liste içe aktarılamadı. Yinelenen veya hatalı satırlar: '+errors.slice(0,10).join(', ')+(errors.length>10?'…':'')+'. Önceki liste korundu.');return out}
+function parseRoster(text){
+ const lines=text.replace(/^\uFEFF/,'').split(/\r?\n/).map((s,i)=>({s:s.trim(),line:i+1})).filter(x=>x.s&&!x.s.startsWith('#'));
+ if(!lines.length)throw Error('Sınıf listesi boş.');
+ const rows=lines.map(x=>({...x,fields:tokenize(x.s)}));
+ const normalizeHeader=s=>String(s??'').trim().toLocaleLowerCase('tr').replace(/[\s_.-]/g,'');
+ const isName=s=>/[a-zA-ZÇĞİÖŞÜçğıöşü]/.test(String(s??'')) && !normClass(s) && !/^(sinif|sınıf|no|numara)$/i.test(String(s??''));
+ const first=rows[0].fields.map(normalizeHeader);
+ const headerNames={cl:['class','classroom','sinif','sınıf','sube','şube'],num:['number','no','schoolno','schoolnumber','studentno','studentnumber','okulno','öğrencino','ogrencino','numara'],name:['name','student','studentname','fullname','adsoyad','adısoyadı','adisoyadi','advesoyad','advesoyadı','nameandsurname','isim','ad']};
+ let header={};for(const [k,aliases] of Object.entries(headerNames)){const index=first.findIndex(x=>aliases.includes(x));if(index>=0)header[k]=index}
+ const explicit=Number.isInteger(header.cl)&&Number.isInteger(header.num)&&Number.isInteger(header.name);
+ // Başlık yoksa sütunların ilk birkaç satırdaki içeriğinden şema belirle.
+ if(!explicit){
+  const sample=rows.slice(0,Math.min(rows.length,25)),maxCols=Math.max(...sample.map(r=>r.fields.length));
+  const counts=Array.from({length:maxCols},(_,i)=>({i,cls:0,num:0,names:0}));
+  for(const r of sample)for(const c of counts){const v=r.fields[c];if(normClass(v))c.cls++;if(normNum(v)!==null)c.num++;if(isName(v))c.names++}
+  const bestClass=counts.slice().sort((a,b)=>b.cls-a.cls||a.i-b.i)[0];
+  if(bestClass?.cls>0){
+   const numCandidates=counts.filter(c=>c.i!==bestClass.i).sort((a,b)=>b.num-a.num||a.i-b.i);
+   const bestNum=numCandidates[0];
+   if(bestNum?.num>0){
+    header={cl:bestClass.i,num:bestNum.i};
+    const nameCols=counts.filter(c=>c.i!==header.cl&&c.i!==header.num&&c.names>0).sort((a,b)=>b.names-a.names||a.i-b.i);
+    if(nameCols.length)header.name=nameCols[0].i;
+   }
+  }
+ }
+ const out=[],errors=[],seen=new Set();
+ for(const r of rows.slice(explicit?1:0)){
+  const fields=r.fields;let cl=null,num=null,name='';
+  if(Number.isInteger(header.cl)&&Number.isInteger(header.num)){
+   cl=normClass(fields[header.cl]);num=normNum(fields[header.num]);
+   const nameIndices=fields.map((_,i)=>i).filter(i=>i!==header.cl&&i!==header.num);
+   if(explicit){name=fields.slice(header.name).join(' ')}
+   else name=nameIndices.filter(i=>i>=0&&String(fields[i]??'').trim()).map(i=>fields[i]).join(' ');
+  }else{
+   const ci=fields.findIndex(f=>normClass(f));if(ci>=0){cl=normClass(fields[ci]);const ni=fields.findIndex((f,i)=>i!==ci&&normNum(f)!==null);if(ni>=0){num=normNum(fields[ni]);name=fields.filter((_,i)=>i!==ci&&i!==ni).join(' ')}}
+  }
+  name=String(name??'').trim().replace(/^"|"$/g,'');
+  // Ön başlık, açıklama veya boş veri satırını öğrenci kaydı sayma.
+  if(!cl&&num===null&&!name)continue;
+  if(!cl||num===null||!name||!isName(name)){errors.push(r.line);continue}
+  const key=cl+':'+num;if(seen.has(key)){errors.push(r.line);continue}seen.add(key);out.push({className:cl,number:num,name});
+ }
+ if(!out.length)throw Error('Geçerli öğrenci bulunamadı. Sınıf (8A/801), okul no ve ad-soyad sütunları bulunmalı.');
+ if(errors.length)throw Error('Liste içe aktarılamadı. Yinelenen veya hatalı satırlar: '+errors.slice(0,10).join(', ')+(errors.length>10?'…':'')+'. Önceki liste korundu.');
+ return out;
+}
 function parseExam(text){
  const found=new Map();
  // Each exam record starts with an eight-digit (or longer) numeric ID.
@@ -354,18 +396,66 @@ $('deleteRoster').addEventListener('click',()=>{if(!confirm('Kayıtlı sınıf l
 for(const b of document.querySelectorAll('.tab'))b.addEventListener('click',()=>{tab=b.dataset.tab;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));renderTable()});$('classFilter').addEventListener('change',renderTable);$('search').addEventListener('input',renderTable);
 function download(content,name,type='text/csv;charset=utf-8'){let a=document.createElement('a'),url=URL.createObjectURL(new Blob(['\uFEFF'+content],{type}));a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 const csvCell=s=>'"'+String(s??'').replace(/"/g,'""')+'"';$('downloadTemplate').addEventListener('click',()=>download('sınıf,No,ad ve soyad\r\n8A,45,Ayşe Yılmaz\r\n8A,654,Mehmet Demir\r\n8B,6,Zeynep Kaya\r\n8C,21,Ali Can\r\n8D,100,Elif Kaya\r\n','ornek_sinif_listesi.csv'));
+// Harici kütüphane kullanmadan, tümüyle çevrimdışı biçimlendirilmiş XLSX oluştur.
+const XMLNS='http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+function xmlEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c])).replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g,'')}
+function xlCol(i){let s='';for(i++;i;i=Math.floor((i-1)/26))s=String.fromCharCode(65+(i-1)%26)+s;return s}
+function buildSheet({title,columns,rows,summary=false}){
+ const n=columns.length,last=xlCol(n-1),lastRow=rows.length+5;
+ const cell=(v,r,c,style=0)=>{const ref=xlCol(c)+r;if(typeof v==='number'&&Number.isFinite(v))return `<c r="${ref}" s="${style}"><v>${v}</v></c>`;return `<c r="${ref}" s="${style}" t="inlineStr"><is><t xml:space="preserve">${xmlEsc(v)}</t></is></c>`};
+ const widths=columns.map((c,i)=>`<col min="${i+1}" max="${i+1}" width="${Math.min(46,Math.max(13,c.width||20))}" customWidth="1"/>`).join('');
+ const head=`<row r="1" ht="37" customHeight="1">${cell(title,1,0,1)}</row><row r="2" ht="23" customHeight="1">${cell(summary?'Genel görünüm':'Sınav: '+(examName||'Yüklenen sınav dosyası'),2,0,2)}</row><row r="3" ht="13" customHeight="1"/><row r="4" ht="27" customHeight="1">${columns.map((c,i)=>cell(c.title,4,i,3)).join('')}</row>`;
+ const body=rows.map((row,j)=>{const r=j+5;return `<row r="${r}" ht="23" customHeight="1">${row.map((v,i)=>cell(v,r,i,(j%2?5:4))).join('')}</row>`}).join('');
+ const merge=`<mergeCells count="2"><mergeCell ref="A1:${last}1"/><mergeCell ref="A2:${last}2"/></mergeCells>`;
+ return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="${XMLNS}"><sheetViews><sheetView showGridLines="0" workbookViewId="0"><pane ySplit="4" topLeftCell="A5" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="18"/><cols>${widths}</cols><sheetData>${head}${body}</sheetData><autoFilter ref="A4:${last}${Math.max(4,lastRow-1)}"/>${merge}<pageMargins left="0.35" right="0.35" top="0.5" bottom="0.5" header="0.2" footer="0.2"/></worksheet>`;
+}
+function zipFiles(files){
+ const enc=new TextEncoder(),parts=[],central=[];let offset=0;
+ const table=Uint32Array.from({length:256},(_,i)=>{let c=i;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;return c>>>0});
+ const crc32=bytes=>{let c=0xffffffff;for(const b of bytes)c=table[(c^b)&255]^(c>>>8);return (c^0xffffffff)>>>0};
+ const hdr=(size,fn)=>{const b=new Uint8Array(size),d=new DataView(b.buffer);fn(d);return b};
+ for(const [path,contents] of Object.entries(files)){
+  const name=enc.encode(path),bytes=enc.encode(contents),crc=crc32(bytes);
+  const loc=hdr(30,d=>{d.setUint32(0,0x04034b50,true);d.setUint16(4,20,true);d.setUint16(6,0x0800,true);d.setUint32(14,crc,true);d.setUint32(18,bytes.length,true);d.setUint32(22,bytes.length,true);d.setUint16(26,name.length,true)});
+  parts.push(loc,name,bytes);
+  const cent=hdr(46,d=>{d.setUint32(0,0x02014b50,true);d.setUint16(4,20,true);d.setUint16(6,20,true);d.setUint16(8,0x0800,true);d.setUint32(16,crc,true);d.setUint32(20,bytes.length,true);d.setUint32(24,bytes.length,true);d.setUint16(28,name.length,true);d.setUint32(42,offset,true)});
+  central.push(cent,name);offset+=loc.length+name.length+bytes.length;
+ }
+ const size=central.reduce((n,p)=>n+p.length,0),end=hdr(22,d=>{d.setUint32(0,0x06054b50,true);d.setUint16(8,Object.keys(files).length,true);d.setUint16(10,Object.keys(files).length,true);d.setUint32(12,size,true);d.setUint32(16,offset,true)});
+ return new Blob([...parts,...central,end],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+function downloadBlob(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000)}
+const studentCols=[{title:'Sınıf / Şube',width:17},{title:'Okul Numarası',width:20},{title:'Öğrenci Adı Soyadı',width:38},{title:'Sınav Durumu',width:29}];
+const unknownCols=[{title:'Sınıf / Şube',width:17},{title:'Okul Numarası',width:20},{title:'Sınav Kimliği',width:27},{title:'Kayıt Sayısı',width:18},{title:'Cevap Durumu',width:27}];
+const statusText={answered:'Cevapladı',noanswers:'Cevap işaretlemedi',missing:'Dosyada yok'};
+const sortStudents=items=>items.slice().sort((a,b)=>Number(a.className[0])-Number(b.className[0])||ALPHABET.indexOf(a.className.slice(1))-ALPHABET.indexOf(b.className.slice(1))||Number(a.number)-Number(b.number)||String(a.name||'').localeCompare(String(b.name||''),'tr'));
+const studentRow=s=>[s.className,Number(s.number),s.name,statusText[s.status]];
+const unknownRow=s=>[s.className,Number(s.number),s.raw,s.count,s.answered?'Cevapladı':'Cevap işaretlemedi'];
+function makeWorkbook(sheets){
+ const files={};
+ files['[Content_Types].xml']='<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/>'+sheets.map((_,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')+'<Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>';
+ files['_rels/.rels']='<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>';
+ files['xl/workbook.xml']='<?xml version="1.0" encoding="UTF-8"?><workbook xmlns="'+XMLNS+'" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>'+sheets.map((s,i)=>`<sheet name="${xmlEsc(s.name)}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join('')+'</sheets></workbook>';
+ files['xl/_rels/workbook.xml.rels']='<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+sheets.map((_,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join('')+`<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`;
+ files['xl/styles.xml']='<?xml version="1.0" encoding="UTF-8"?><styleSheet xmlns="'+XMLNS+'"><fonts count="3"><font><sz val="11"/><name val="Aptos"/><color rgb="FF23334A"/></font><font><b/><sz val="19"/><name val="Aptos Display"/><color rgb="FFFFFFFF"/></font><font><b/><sz val="11"/><name val="Aptos"/><color rgb="FFFFFFFF"/></font></fonts><fills count="6"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF172B4D"/><bgColor indexed="64"/></patternFill></fill><fill><patternFill patternType="solid"><fgColor rgb="FF2B527F"/><bgColor indexed="64"/></patternFill></fill><fill><patternFill patternType="solid"><fgColor rgb="FFF2F6FC"/><bgColor indexed="64"/></patternFill></fill><fill><patternFill patternType="solid"><fgColor rgb="FFFFFFFF"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="6"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFill="1" applyFont="1"/><xf numFmtId="0" fontId="0" fillId="4" borderId="0" xfId="0" applyFill="1"/><xf numFmtId="0" fontId="2" fillId="3" borderId="0" xfId="0" applyFill="1" applyFont="1"/><xf numFmtId="0" fontId="0" fillId="5" borderId="0" xfId="0" applyFill="1"/><xf numFmtId="0" fontId="0" fillId="4" borderId="0" xfId="0" applyFill="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>';
+ sheets.forEach((s,i)=>{files[`xl/worksheets/sheet${i+1}.xml`]=buildSheet(s)});
+ return zipFiles(files);
+}
 $('exportCategoryBtn').addEventListener('click',()=>{
  if(!examLoaded||!roster.length)return;
  const {list,unknown}=data(),cl=$('classFilter').value,q=$('search').value.trim().toLocaleLowerCase();
- const filtered=tab==='unknown'
- ? unknown.filter(s=>(cl==='all'||s.className===cl)&&(s.number.includes(q)||s.raw.includes(q)||s.className.toLowerCase().includes(q)))
- : list.filter(s=>(cl==='all'||s.className===cl)&&(!q||s.name.toLocaleLowerCase().includes(q)||s.number.includes(q)||s.className.toLowerCase().includes(q))&&(tab==='all'||(tab==='present'?s.status==='answered':tab==='missing'?s.status==='missing':s.status==='noanswers')));
- filtered.sort((a,b)=>a.className.localeCompare(b.className)||Number(a.number)-Number(b.number));
- let lines=tab==='unknown'?['Sınıf,Okul No,Sınav Kimliği,Kayıt Sayısı,Cevap Durumu']:['Sınıf,Okul No,Ad Soyad,Durum'];
- for(const s of filtered)lines.push((tab==='unknown'?[s.className,s.number,s.raw,s.count,s.answered?'Cevapladı':'Cevap işaretlemedi']:[s.className,s.number,s.name,({answered:'Cevapladı',noanswers:'Cevap işaretlemedi',missing:'Dosyada yok'}[s.status])]).map(csvCell).join(','));
- download(lines.join('\r\n')+'\r\n','sinav_'+({absent:'cevap_isaretlemeyenler',missing:'dosyada_olmayanlar',present:'cevaplayanlar',all:'tum_ogrenciler',unknown:'eslesmeyen_kayitlar'}[tab])+'.csv');
+ const filtered=tab==='unknown'?unknown.filter(s=>(cl==='all'||s.className===cl)&&(s.number.includes(q)||s.raw.includes(q)||s.className.toLowerCase().includes(q))):list.filter(s=>(cl==='all'||s.className===cl)&&(!q||s.name.toLocaleLowerCase().includes(q)||s.number.includes(q)||s.className.toLowerCase().includes(q))&&(tab==='all'||(tab==='present'?s.status==='answered':tab==='missing'?s.status==='missing':s.status==='noanswers')));
+ const names={absent:'Cevap İşaretlemeyenler',missing:'Dosyada Olmayanlar',present:'Cevaplayanlar',all:'Tüm Öğrenciler',unknown:'Eşleşmeyen Kayıtlar'};
+ downloadBlob(makeWorkbook([{name:names[tab],title:names[tab]+' · '+filtered.length+' kayıt',columns:tab==='unknown'?unknownCols:studentCols,rows:sortStudents(filtered).map(tab==='unknown'?unknownRow:studentRow)}]),'sinav_secili_liste.xlsx');
 });
-$('exportBtn').addEventListener('click',()=>{if(!examLoaded||!roster.length)return;let {list,unknown}=data();let lines=['Sınıf,Okul No,Ad Soyad,Durum'];for(let s of list.sort((a,b)=>a.className.localeCompare(b.className)||Number(a.number)-Number(b.number)))lines.push([s.className,s.number,s.name,({answered:'Cevapladı',noanswers:'Cevap işaretlemedi',missing:'Dosyada yok'}[s.status])].map(csvCell).join(','));lines.push('');lines.push('Eşleşmeyen Sınav Kimlikleri');lines.push('Sınıf,Okul No,Sınav Kimliği,Kayıt Sayısı,Cevap Durumu');for(let s of unknown)lines.push([s.className,s.number,s.raw,s.count,s.answered?'Cevapladı':'Cevap işaretlemedi'].map(csvCell).join(','));download(lines.join('\r\n')+'\r\n','sinav_yoklama_sonuclari.csv')});
+$('exportBtn').addEventListener('click',()=>{
+ if(!examLoaded||!roster.length)return;
+ const {list,unknown}=data();
+ const categories=[['Dosyada Olmayanlar','missing'],['İşaretlemeyenler','noanswers'],['Cevaplayanlar','answered']];
+ const summary=[['Toplam öğrenci',list.length,'Öğrenci listesinde kayıtlı'],['Dosyada bulunmayan',list.filter(s=>s.status==='missing').length,'Optik dosyasında kaydı yok'],['Cevap işaretlemeyen',list.filter(s=>s.status==='noanswers').length,'Optiği var, cevap yok'],['Cevaplayan',list.filter(s=>s.status==='answered').length,'Optiği ve cevapları var'],['Eşleşmeyen kayıt',unknown.length,'Optikte var, öğrenci listesinde yok']];
+ const sheets=[{name:'Özet',title:'SINAV YOKLAMA RAPORU',summary:true,columns:[{title:'Ölçüt',width:32},{title:'Sayı',width:16},{title:'Açıklama',width:50}],rows:summary},...categories.map(([name,status])=>({name,title:name+' · '+list.filter(s=>s.status===status).length+' öğrenci',columns:studentCols,rows:sortStudents(list.filter(s=>s.status===status)).map(studentRow)})),{name:'Tüm Öğrenciler',title:'Tüm Öğrenciler · '+list.length+' kayıt',columns:studentCols,rows:sortStudents(list).map(studentRow)},{name:'Eşleşmeyenler',title:'Eşleşmeyen Sınav Kayıtları · '+unknown.length,columns:unknownCols,rows:sortStudents(unknown).map(unknownRow)}];
+ downloadBlob(makeWorkbook(sheets),'sinav_yoklama_raporu.xlsx');
+});
 loadSaved();
 })();
 </script>
